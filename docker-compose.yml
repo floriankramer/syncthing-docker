@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  syncthing:
+    build: image
+    image: ghcr.io/floriankramer/syncthing
+    container_name: syncthing
+    volumes:
+      - ./storage:/home/syncthing/persistent
+      - ./config:/home/syncthing/.config/syncthing
+    ports:
+      - 127.0.0.1:8385:8384
